@@ -4,6 +4,7 @@ author: Chris
 layout: post
 icon: fa-lightbulb
 icon-style: regular
+category: Post
 ---
 See the icon?
 
