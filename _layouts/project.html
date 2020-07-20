@@ -3,10 +3,13 @@ layout: default
 ---
 {%- assign _projects = site.projects | sort: 'date' | reverse -%}
 {%- include header.html scrolly_nav=_projects -%}
+
 <!-- Main -->
 <div id="main">
-	{%- if page.content != "" -%}
-		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
+	{% if _projects.categories contains 'Project' %}
+		{%- if page.content != "" -%}
+			{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
+		{%- endif -%}
 	{%- endif -%}
 	<!-- Posts List -->
 	{%- for _post in _projects -%}
